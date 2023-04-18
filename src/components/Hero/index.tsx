@@ -1,20 +1,9 @@
-import {
-  Anchor,
-  BackgroundImage,
-  Box,
-  Center,
-  Flex,
-  Grid,
-  Text,
-  Title,
-  rem,
-  useMantineTheme,
-} from '@mantine/core'
+import { Anchor, BackgroundImage, Box, Text, Title, rem, useMantineTheme } from '@mantine/core'
 
 const Hero = () => {
   const theme = useMantineTheme()
   return (
-    <Box h={`calc(100vh - ${rem(83)})`} mx="auto">
+    <Box h={{ xs: `calc(100vh - ${rem(83)})` }} mx="auto">
       <BackgroundImage src={'/images/steve-johnson.png'} radius="sm" h="100%">
         <Box
           bg="linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))"
@@ -34,7 +23,7 @@ const Hero = () => {
             worked on.
           </Title>
 
-          <Box maw={860} m="auto" pt={{ base: 'xs', sm: rem(40) }}>
+          <Box maw={860} m="auto" py={{ base: 'xs', sm: rem(40) }}>
             <Text fz={{ base: 'lg', sm: 'xl' }} color={theme.colors.gray[0]} component="p" fw={600}>
               Each project is presented in a card on the main page, and you can click on each one to
               learn more about how it was built and the strategy behind the design.
@@ -49,23 +38,23 @@ const Hero = () => {
             </Text>
           </Box>
         </Box>
-        <Text component="p" align="center" m={0}>
-          Photo by{' '}
-          <Anchor
-            href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            target="_blank"
-          >
-            Steve Johnson
-          </Anchor>{' '}
-          in{' '}
-          <Anchor
-            href="https://unsplash.com/pt-br/fotografias/zkNT5mikUuo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            target="_blank"
-          >
-            Unsplash
-          </Anchor>
-        </Text>
       </BackgroundImage>
+      <Text component="p" align="center" m={0}>
+        Photo by{' '}
+        <Anchor
+          href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          target="_blank"
+        >
+          Steve Johnson
+        </Anchor>{' '}
+        in{' '}
+        <Anchor
+          href="https://unsplash.com/pt-br/fotografias/zkNT5mikUuo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          target="_blank"
+        >
+          Unsplash
+        </Anchor>
+      </Text>
     </Box>
   )
 }
