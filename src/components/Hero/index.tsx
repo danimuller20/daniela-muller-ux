@@ -1,4 +1,15 @@
-import { Anchor, BackgroundImage, Box, Text, Title, rem, useMantineTheme } from '@mantine/core'
+import {
+  Anchor,
+  Avatar,
+  BackgroundImage,
+  Box,
+  Flex,
+  Image,
+  Text,
+  Title,
+  rem,
+  useMantineTheme,
+} from '@mantine/core'
 
 const Hero = () => {
   const theme = useMantineTheme()
@@ -6,7 +17,7 @@ const Hero = () => {
     <Box h={{ xs: `calc(100vh - ${rem(83)})` }} mx="auto">
       <BackgroundImage src={'/images/steve-johnson.png'} radius="sm" h="100%">
         <Box
-          bg="linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))"
+          bg="linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))"
           h="100%"
           px={{ base: rem(20), sm: rem(40) }}
         >
@@ -19,27 +30,32 @@ const Hero = () => {
             pt={{ base: rem(40), md: rem(80) }}
             m="auto"
           >
-            Welcome to my UX design portfolio! Here, you&apos;ll find examples of projects I&apos;ve
-            worked on.
+            Hello, I&apos;m Daniela!
           </Title>
-
-          <Box maw={860} m="auto" py={{ base: 'xs', sm: rem(40) }}>
-            <Text fz={{ base: 'lg', sm: 'xl' }} color={theme.colors.gray[0]} component="p" fw={600}>
-              Each project is presented in a card on the main page, and you can click on each one to
-              learn more about how it was built and the strategy behind the design.
+          <Flex
+            maw={rem(1200)}
+            m="auto"
+            py={{ base: 'xl', sm: rem(80) }}
+            align="center"
+            gap={{ base: 'sm', md: 'xl' }}
+            direction={{ base: 'column', md: 'row' }}
+          >
+            <Avatar radius="50%" size={300} src="/images/me-trybe.png" alt="Daniela Muller" />
+            <Text fz={{ base: 'lg', sm: 'xl' }} color={theme.colors.gray[0]} component="i" fw={600}>
+              &quot;I work as a software developer at{' '}
+              <Anchor color={theme.colors.green[4]} href="https://www.betrybe.com/" target="_blank">
+                Trybe
+              </Anchor>{' '}
+              with a focus on front-end development, which I am passionate about. In my opinion,
+              having knowledge in user experience is important for front-end developers since it
+              plays a role in the development process. Understanding UX and its applications helps
+              me to complete my daily tasks effectively and create products that are user-friendly
+              for those who interact with them.&quot;
             </Text>
-            <Text fz={{ base: 'lg', sm: 'xl' }} color={theme.colors.gray[0]} component="p" fw={600}>
-              If you want to learn more about my skills and experience in UX design, check out the
-              projects on this page. Feel free to contact me if you have any questions or need help
-              with your own design project.
-            </Text>
-            <Text fz={{ base: 'lg', sm: 'xl' }} color={theme.colors.gray[0]} component="p" fw={600}>
-              Thanks for visiting my portfolio and I hope you like what you see!
-            </Text>
-          </Box>
+          </Flex>
         </Box>
       </BackgroundImage>
-      <Text component="p" align="center" m={0}>
+      <Text component="p" align="center" m={0} fz="xs">
         Photo by{' '}
         <Anchor
           href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"

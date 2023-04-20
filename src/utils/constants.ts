@@ -1,4 +1,9 @@
-import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons-react'
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconMail,
+} from '@tabler/icons-react'
 
 export const SITE_LINKS = [
   {
@@ -8,10 +13,6 @@ export const SITE_LINKS = [
   {
     label: 'About',
     href: '/about',
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
   },
 ]
 
@@ -30,5 +31,10 @@ export const SOCIAL_LINKS = [
     label: 'Instagram',
     href: 'https://www.instagram.com/danimuller20/',
     icon: IconBrandInstagram,
+  },
+  {
+    label: 'Email',
+    email: 'danielamuller20@gmail.com',
+    icon: IconMail,
   },
 ]

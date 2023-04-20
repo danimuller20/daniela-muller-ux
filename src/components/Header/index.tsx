@@ -1,12 +1,22 @@
 import BurgerMenu from '@components/BurgerMenu.tsx'
-import { Anchor, Box, Flex, NavLink, Paper, Title, rem, useMantineTheme } from '@mantine/core'
+import {
+  Anchor,
+  Box,
+  Flex,
+  Image,
+  NavLink,
+  Paper,
+  Title,
+  rem,
+  useMantineTheme,
+} from '@mantine/core'
 import { SITE_LINKS } from '@utils/constants'
 
 const Header = () => {
   const theme = useMantineTheme()
   return (
     <Paper
-      py="md"
+      py="xs"
       px={{ base: rem(20), sm: rem(40) }}
       bg={theme.colors.gray[1]}
       shadow="sm"
@@ -20,7 +30,7 @@ const Header = () => {
         <NavLink
           component="a"
           href="/"
-          px={0}
+          p={0}
           w={'fit-content'}
           h="fit-content"
           sx={theme => ({
@@ -28,11 +38,7 @@ const Header = () => {
               backgroundColor: theme.colors.gray[1],
             },
           })}
-          label={
-            <Title color={theme.black} order={1} size="h2">
-              Daniela Muller
-            </Title>
-          }
+          label={<Image maw={130} h={'auto'} src="/daniela-muller.png" alt="Daniela Muller logo" />}
         />
         <BurgerMenu />
         <Box display={{ base: 'none', sm: 'initial' }}>
