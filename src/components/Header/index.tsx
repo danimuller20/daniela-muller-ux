@@ -6,14 +6,18 @@ import {
   Image,
   NavLink,
   Paper,
+  Skeleton,
   Title,
   rem,
   useMantineTheme,
 } from '@mantine/core'
 import { SITE_LINKS } from '@utils/constants'
+import { useState } from 'react'
 
 const Header = () => {
   const theme = useMantineTheme()
+  const [loading, setLoading] = useState(false)
+
   return (
     <Paper
       py="xs"
@@ -38,7 +42,15 @@ const Header = () => {
               backgroundColor: theme.colors.gray[1],
             },
           })}
-          label={<Image maw={130} h={'auto'} src="/daniela-muller.png" alt="Daniela Muller logo" />}
+          label={
+            <Image
+              withPlaceholder
+              width={130}
+              h={'auto'}
+              src="/daniela-muller.png"
+              alt="Daniela Muller logo"
+            />
+          }
         />
         <BurgerMenu />
         <Box display={{ base: 'none', sm: 'initial' }}>
