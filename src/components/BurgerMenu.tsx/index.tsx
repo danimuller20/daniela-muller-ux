@@ -10,7 +10,13 @@ const BurgerMenu = () => {
   return (
     <Menu shadow="md" width={'100%'}>
       <Menu.Target>
-        <Burger opened={opened} onClick={toggle} aria-label={label} display={{ sm: 'none' }} />
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          aria-label={label}
+          display={{ sm: 'none' }}
+          color={theme.colors.green[9]}
+        />
       </Menu.Target>
       <Menu.Dropdown
         bg={theme.colors.gray[1]}
@@ -34,7 +40,11 @@ const BurgerMenu = () => {
           const Icon = social.icon
           return (
             <Menu.Item key={`burger-${social.label}`}>
-              <Anchor fz="lg" c={theme.black} href={social.href}>
+              <Anchor
+                fz="lg"
+                c={theme.black}
+                href={social.href ? social.href : `mailto:${social.email}`}
+              >
                 <Flex gap="xs">
                   <Icon color="black" />
                   {social.label}
